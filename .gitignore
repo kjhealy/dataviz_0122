@@ -3,6 +3,7 @@
 .Rdata
 .httr-oauth
 .DS_Store
+keynote/*
 slides/*.html
 slides/*_files/
 slides/libs/
