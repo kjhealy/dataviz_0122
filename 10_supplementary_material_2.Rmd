@@ -15,6 +15,7 @@ library(here)
 library(tidyverse)
 library(ggalt)
 library(janitor)
+library(patchwork)
 library(socviz)
 library(covdata)
 ```
@@ -239,7 +240,8 @@ patch_state_covid <- function(state) {
 
 ## Function to assemble everything
 make_patchplot <- function(state){
-  
+
+library(patchwork)  
 if(state == "New York")  {
   state_title <- paste(state, "(Excluding New York City)")
 } else 
@@ -247,13 +249,13 @@ if(state == "New York")  {
   state_title <- state
 }
 
-timestamp <-  lubridate::stamp("March 1, 1999", "%B %d, %Y")(lubridate::ymd(Sys.Date()))   
+timestamp_txt <-  lubridate::stamp("March 1, 1999", "%B %d, %Y", quiet = TRUE)(lubridate::ymd(Sys.Date()))   
   
 (patch_state_count(state) + theme(plot.margin = unit(c(5,0,0,0), "pt"))) / patch_state_covid(state) / (patch_state_cause(state) + (patch_state_percent(state))) +  
     plot_layout(heights = c(2, 0.5, 4), guides = 'collect') + 
   plot_annotation(
   title = state_title,
-  caption = paste0("Graph: @kjhealy Data: CDC. This graph was made on ", timestamp, "."), 
+  caption = paste0("Graph: @kjhealy Data: CDC. This graph was made on ", timestamp_txt, "."), 
   theme = theme(plot.title = element_text(size = rel(2), hjust = 0, face = "plain")))
 }
 ```
@@ -265,15 +267,12 @@ out_patch <- states %>%
   mutate(patch_plot = map(jurisdiction, make_patchplot))
 
 
-## We use walk functions to create the files 
+## We use walk functions to create the output files 
 walk2(paste0(out_patch$fname, ".png"), 
      out_patch$patch_plot, ggsave, height = 16, width = 9, dpi = 200)
 
 walk2(paste0(out_patch$fname, ".pdf"), 
      out_patch$patch_plot, ggsave, height = 16, width = 9)
-
-
-
 
 ```
 
