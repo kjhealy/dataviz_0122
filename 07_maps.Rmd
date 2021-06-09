@@ -421,3 +421,5 @@ p3 + labs(x = "", y = "Rate per 100,000 population",
     facet_wrap(~ reorder(division_name, -adjusted, na.rm = TRUE), nrow  = 3)
 
 ```
+
+

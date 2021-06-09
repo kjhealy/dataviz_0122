@@ -1,0 +1,21 @@
+---
+title: "Supplementary Material II"
+author: "Kieran Healy"
+date: "09-June-2021"
+output: html_document
+---
+
+## Load Libraries
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(here)
+library(tidyverse)
+library(ggrepel)
+library(socviz)
+```
+
+
+

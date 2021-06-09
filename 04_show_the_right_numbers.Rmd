@@ -187,7 +187,9 @@ p + geom_col() + guides(fill = FALSE) +
 
 ```
 
-### Frequency Plots the Slightly Awkward Way
+### Frequency Plots the Awkward Way
+
+- Not the preferred method!
 
 ```{r gss_tab}
 

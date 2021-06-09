@@ -190,12 +190,12 @@ by_country
 ```{r better_summarize}
 by_country <- organdata %>% 
   group_by(consent_law, country) %>%
-    summarize_if(is.numeric, 
-                 list(~ mean(., na.rm = TRUE), 
-                      ~ sd(., na.rm = TRUE))) %>%
-    ungroup()
-
-by_country
+    summarize(across(where(is.numeric),
+                     list(mean = mean, 
+                          sd = sd),
+                      na.rm = TRUE,
+                      .names = "{col}_{fn}"),
+              .groups = "drop")
 ```
 
 ```{r 05-tables-and-labels-12 }
