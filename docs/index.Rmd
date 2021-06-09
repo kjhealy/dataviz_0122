@@ -88,14 +88,14 @@ install.packages(data_packages, repos = "https://kjhealy.github.io/drat/")
 
 ```
 
-If you do not have one already, it will be useful to create a GitHub account and obtain a GitHub Personal Access Token. (This is not required for the course, it will just be helpful to have one.) To get set up, read and _carefully follow_ the instructions in Parts I and II of [Happy Git With R](https://happygitwithr.com), and then also the instructions in [Appendix B](https://happygitwithr.com/github-pat.html) of the same document.
+If you do not have one already, it will be useful to create a GitHub account and obtain a GitHub Personal Access Token. (This is not required for the course, it will just be helpful to have one.) To get set up, read and _carefully follow_ the instructions in Parts I and II of [Happy Git With R](https://happygitwithr.com), and then also the instructions in [Appendix B](https://happygitwithr.com/github-pat.html) of the same document. Again, this is an optional step only.
 
 
 # The Course Packet
 
-The course packet will be available here when we begin the course. It will contain PDFs of the slides for the course together with code for almost all of the graphs we will draw, and any additional material (such as examples arising from questions, office-hour exercises, and so on) that we cover during the course. 
+The [course packet](https://github.com/kjhealy/dataviz_0621/archive/refs/heads/main.zip) is an RStudio project containing PDFs of the slides for the course together with code for almost all of the graphs we will draw, and some additional datasets and other material. After you have installed R and RStudio, [download the course packet](https://github.com/kjhealy/dataviz_0621/archive/refs/heads/main.zip) and uncompress it on your computer. Double-clicking the file named `dataviz.Rproj` should launch the project in RStudio.
 
 # Instructor
 
-[Kieran Healy](https://kieranhealy.org) is Professor of Sociology at Duke University. He is the author of [Data Visualization: A Practical Introduction](http://socviz.co) (Princeton University Press, 2019). Much of his research has been about the social organization of exchange in human blood and organs, cultural goods, software, and ideas. His current work focuses on the moral order of market society, the effect of models and measurement on social classification, and the link between those two topics, especially in the consumer credit market. You can learn more at [https://kieranhealy.org](https://kieranhealy.org)
+[Kieran Healy](https://kieranhealy.org) is Professor of Sociology at Duke University. He is the author of [Data Visualization: A Practical Introduction](http://socviz.co) (Princeton University Press, 2019). Much of his research has been about the social organization of exchange in human blood and organs, cultural goods, software, and ideas. His current work focuses on the moral order of market society, the effect of models and measurement on social classification, and the link between those two topics, especially in the consumer credit market. You can learn more at [https://kieranhealy.org](https://kieranhealy.org).
 
