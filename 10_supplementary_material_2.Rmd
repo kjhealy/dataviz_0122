@@ -13,8 +13,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(here)
 library(tidyverse)
-library(ggrepel)
 library(socviz)
+library(covdata)
+```
+
+```{r}
+
 ```
 
 
