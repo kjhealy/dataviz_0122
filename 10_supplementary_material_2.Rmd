@@ -20,7 +20,7 @@ library(covdata)
 ```
 
 
-## Cross-national 
+## Cross-national COVID plots
 
 ```{r}
 rate_rank <- stmf %>%
