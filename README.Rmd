@@ -95,21 +95,15 @@ This repo is also the course packet. It contains the course material, data, slid
 
 ## What's here
 
-### The `course_notes.Rmd` document
+### RMarkdown files 
 
-An RMarkdown document to get you started on taking your own notes for the course, and writing your own code. 
-
-### `scratch.Rmd` 
-
-An RMarkdown document where I'll work on examples or queries that come up in class.
+- `course_notes.Rmd` is an RMarkdown document to get you started on taking your own notes for the course, and writing your own code. 
+- `scratch.Rmd`is where I'll work on examples or queries that come up in class.
+- The other `.Rmd` files contain all of the code snippets from the slides.
 
 ### The `data/` folder
 
 Datasets we may use during the course.
-
-### The `.Rmd` files
-
-All of the code snippets from the slides, as RMarkdown files.
 
 ### The `slides/` folder
 
