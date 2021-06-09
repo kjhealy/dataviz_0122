@@ -7,7 +7,7 @@ author:
   url: https://kieranhealy.org
   affiliation: Duke University
   affiliation_url: https://sociology.duke.edu
-date: "`Statistical Horizons, June 2021`"
+date: "`[Statistical Horizons](https://statisticalhorizons.com), June 2021`"
 output: md_document
 
 ---
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 ```
 
 
-## A 4-Day Remote Seminar at Statistical Horizons.
+## A 4-Day Remote Seminar via [Statistical Horizons](https://statisticalhorizons.com).
 
 ## Information for Participants
 

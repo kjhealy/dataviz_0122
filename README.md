@@ -1,4 +1,4 @@
-## A 4-Day Remote Seminar at Statistical Horizons.
+## A 4-Day Remote Seminar via [Statistical Horizons](https://statisticalhorizons.com).
 
 ## Information for Participants
 
