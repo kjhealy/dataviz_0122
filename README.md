@@ -1,4 +1,4 @@
-## A 4-Day Remote Seminar via [Statistical Horizons](https://statisticalhorizons.com).
+## A 4-Day Remote Seminar via [Code Horizons](https://codehorizons.com/Seminars/data-visualization/).
 
 ## Information for Participants
 
@@ -9,8 +9,8 @@ course materials.
 ## Sign-up and Registration
 
 -   Learn more about logistical and registration information at the
-    [seminar’s home page at Statistical
-    Horizons](https://statisticalhorizons.com/seminars/public-seminars/data-visualization)
+    [seminar’s home page at Code
+    Horizons](https://codehorizons.com/Seminars/data-visualization/)
 
 ## Course Overview
 

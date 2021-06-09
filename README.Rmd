@@ -7,7 +7,7 @@ author:
   url: https://kieranhealy.org
   affiliation: Duke University
   affiliation_url: https://sociology.duke.edu
-date: "`[Statistical Horizons](https://statisticalhorizons.com), June 2021`"
+date: "`[Code Horizons](https://codehorizons.com/Seminars/data-visualization/), June 2021`"
 output: md_document
 
 ---
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 ```
 
 
-## A 4-Day Remote Seminar via [Statistical Horizons](https://statisticalhorizons.com).
+## A 4-Day Remote Seminar via [Code Horizons](https://codehorizons.com/Seminars/data-visualization/).
 
 ## Information for Participants
 
@@ -28,7 +28,7 @@ This page contains information for seminar participants. Please read it and foll
 
 ## Sign-up and Registration
 
-- Learn more about logistical and registration information at the [seminar's home page at Statistical Horizons](https://statisticalhorizons.com/seminars/public-seminars/data-visualization)
+- Learn more about logistical and registration information at the [seminar's home page at Code Horizons](https://codehorizons.com/Seminars/data-visualization/)
 
 ## Course Overview
 
