@@ -5,7 +5,7 @@ description: |
 author:
 - name: Kieran Healy
   url: https://kieranhealy.org
-date: "`Statistical Horizons, June 2021`"
+date: "`Code Horizons, June 2021`"
 output: distill::distill_article
 ---
 
@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## A 4-Day Remote Seminar at Statistical Horizons.
+## A 4-Day Remote Seminar at [Code Horizons](https://codehorizons.com/Seminars/data-visualization/).
 
 ## Information for Participants
 
@@ -30,7 +30,7 @@ This page contains information for seminar participants. Please read it and foll
 
 ## Sign-up and Registration
 
-- Learn more about logistical and registration information at the [seminar's home page at Statistical Horizons](https://statisticalhorizons.com/seminars/public-seminars/data-visualization)
+- Learn more about logistical and registration information at the [seminar's home page at Code Horizons](https://codehorizons.com/Seminars/data-visualization/)
 
 ## Course Overview
 
