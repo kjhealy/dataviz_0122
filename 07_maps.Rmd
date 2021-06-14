@@ -435,6 +435,9 @@ theme_nymap <- function(base_size=9, base_family="") {
 ```
 
 ```{r, fig.width=11, fig.height=8}
+fb_map <- left_join(nyc_zips, nyc_fb)
+
+
 fb_map %>% ggplot(mapping = aes(fill = pct)) +
     geom_sf(color = "gray80", size = 0.1) +
     scale_fill_viridis_c(option = "A") +
@@ -498,7 +501,6 @@ nyc_fb
 
 ```{r}
 fb_map <- left_join(nyc_zips, nyc_fb)
-#> Joining, by = "zip_code"
 
 fb_map %>% 
     ggplot(mapping = aes(fill = pct)) +
