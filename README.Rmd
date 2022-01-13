@@ -53,9 +53,9 @@ We will be working with the most recent stable versions of R and RStudio, as wel
 ### Installing R and RStudio on your Laptop
 
 - Begin by installing R (<http://cloud.r-project.org>). Choose the version appropriate for your computing platform:
-  - [macOS with an Intel processor](https://cloud.r-project.org/bin/macosx/base/R-4.1.0.pkg)
-  - [macOS with an Apple Silicon (M1) processor](https://cloud.r-project.org/bin/macosx/big-sur-arm64/base/R-4.1.0-arm64.pkg)
-  - [Windows](https://cloud.r-project.org/bin/windows/base/R-4.1.0-win.exe), 
+  - [macOS with an Intel processor](https://cloud.r-project.org/bin/macosx/base/R-4.1.2.pkg)
+  - [macOS with an Apple Silicon (M1) processor](https://cloud.r-project.org/bin/macosx/big-sur-arm64/base/R-4.1.2-arm64.pkg)
+  - [Windows](https://cloud.r-project.org/bin/windows/base/R-4.1.2-win.exe), 
   - [Linux](https://cloud.r-project.org/bin/linux/).
 - Next, install RStudio (<http://rstudio.com>). Follow the links to download the [free RStudio Desktop edition](https://rstudio.com/products/rstudio/download/#download) recommended for your system.
 
@@ -91,7 +91,7 @@ If you do not have one already, it will be useful to create a GitHub account and
 
 # The Course Packet
 
-This repo is also the course packet. It contains the course material, data, slides, and code for the graphs we will draw. It's an RStudio project. To launch it, double-click on `dataviz.Rproj` and RStudio will open with this project ready to go. 
+This repo is also the course packet. It contains the course material, data, slides, and code for the graphs we will draw. It's an RStudio project. Clone it with Git or [download it as a zip file](https://github.com/kjhealy/dataviz_0122/archive/refs/heads/main.zip) and decompress it. To launch the project, double-click on `dataviz.Rproj` and RStudio will open with this project ready to go. 
 
 ## What's here
 

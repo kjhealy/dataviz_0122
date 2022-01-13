@@ -58,10 +58,10 @@ to install R, RStudio, and the necessary packages on your own computer.
 -   Begin by installing R (<http://cloud.r-project.org>). Choose the
     version appropriate for your computing platform:
     -   [macOS with an Intel
-        processor](https://cloud.r-project.org/bin/macosx/base/R-4.1.0.pkg)
+        processor](https://cloud.r-project.org/bin/macosx/base/R-4.1.2.pkg)
     -   [macOS with an Apple Silicon (M1)
-        processor](https://cloud.r-project.org/bin/macosx/big-sur-arm64/base/R-4.1.0-arm64.pkg)
-    -   [Windows](https://cloud.r-project.org/bin/windows/base/R-4.1.0-win.exe),
+        processor](https://cloud.r-project.org/bin/macosx/big-sur-arm64/base/R-4.1.2-arm64.pkg)
+    -   [Windows](https://cloud.r-project.org/bin/windows/base/R-4.1.2-win.exe),
     -   [Linux](https://cloud.r-project.org/bin/linux/).
 -   Next, install RStudio (<http://rstudio.com>). Follow the links to
     download the [free RStudio Desktop
@@ -111,8 +111,10 @@ document.
 
 This repo is also the course packet. It contains the course material,
 data, slides, and code for the graphs we will draw. It’s an RStudio
-project. To launch it, double-click on `dataviz.Rproj` and RStudio will
-open with this project ready to go.
+project. Clone it with Git or [download it as a zip
+file](https://github.com/kjhealy/dataviz_0122/archive/refs/heads/main.zip)
+and decompress it. To launch the project, double-click on
+`dataviz.Rproj` and RStudio will open with this project ready to go.
 
 ## What’s here
 
