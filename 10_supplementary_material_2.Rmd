@@ -1,16 +1,37 @@
 ---
 title: "Supplementary Material II"
 author: "Kieran Healy"
-date: "09-June-2021"
+date: "13-January-2022"
 output: html_document
 ---
 
 ## Load Libraries
 
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+reprex_highlight <- function (rout_file, reprex_file, arg_string = NULL) 
+{
+    arg_string <- arg_string %||% highlight_args()
+    cmd <- paste0("highlight ", " -i ", rout_file, " --out-format=rtf --no-trailing-nl --encoding=UTF-8", 
+        arg_string, " -o ", reprex_file)
+    if (is_windows()) {
+        res <- shell(cmd)
+    }
+    else {
+        res <- system(cmd)
+    }
+#    if (res > 0) {
+#        abort("`highlight` call unsuccessful.")
+#    }
+    res
+}
+```
+
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-
 library(here)
 library(tidyverse)
 library(ggalt)
@@ -205,7 +226,7 @@ patch_state_percent <- function(state, nc = 2){
   scale_x_continuous(breaks = c(1, seq(10, nwks, 10)), labels = as.character(c(1, seq(10, nwks, 10)))) + 
   scale_y_continuous(labels = scales::percent) +
   scale_fill_manual(values = c("gray40", "firebrick")) +
-  guides(fill = FALSE) + 
+  guides(fill = "none") + 
   facet_wrap(~ cause_ord, ncol = nc, labeller = label_wrap_gen(25)) + 
   labs(x = "Week of the Year", 
        y = "Percent", 
@@ -252,11 +273,12 @@ if(state == "New York")  {
 timestamp_txt <-  lubridate::stamp("March 1, 1999", "%B %d, %Y", quiet = TRUE)(lubridate::ymd(Sys.Date()))   
   
 (patch_state_count(state) + theme(plot.margin = unit(c(5,0,0,0), "pt"))) / patch_state_covid(state) / (patch_state_cause(state) + (patch_state_percent(state))) +  
-    plot_layout(heights = c(2, 0.5, 4), guides = 'collect') + 
+    plot_layout(heights = c(2, 0.5, 4), guides = "collect") + 
   plot_annotation(
   title = state_title,
   caption = paste0("Graph: @kjhealy Data: CDC. This graph was made on ", timestamp_txt, "."), 
-  theme = theme(plot.title = element_text(size = rel(2), hjust = 0, face = "plain")))
+  theme = theme(plot.title = element_text(size = rel(2), hjust = 0, face = "plain"), 
+                legend.position = "top"))
 }
 ```
 

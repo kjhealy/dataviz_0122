@@ -1,7 +1,7 @@
 ---
 title: "Refining Your Plots"
 author: "Kieran Healy"
-date: "09-June-2021"
+date: "13-January-2022"
 output: html_document
 ---
 
@@ -607,12 +607,16 @@ ggsave("figures/fefam_svy.png", p, width = 8, height = 6, dpi = 300)
 out_ff_agequint <- gss_svy %>%
   group_by(year, agequint, fefam_d) %>%
   summarize(prop = survey_mean(na.rm = TRUE, vartype = "se")) %>%
+  drop_na() %>% 
+  ungroup() %>% 
   mutate(end_label = if_else(year == max(year),
                              socviz::prefix_strip(as.character(agequint), "Age "), 
                              NA_character_),
          start_label = if_else(year == min(year),
                                socviz::prefix_strip(as.character(agequint), "Age "), 
-                               NA_character_))
+                               NA_character_)) 
+
+    
 
 man_cols <- RColorBrewer::brewer.pal(9, "Blues")
 man_cols <- man_cols[4:9]
@@ -627,9 +631,13 @@ p <- ggplot(subset(out_ff_agequint, fefam_d == "Disagree"),
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_fill_manual(values = man_cols) +
   scale_color_manual(values = man_cols) +
-  guides(fill = FALSE, color = FALSE) +
-  annotate("text", x = 1974.5, y = 0.58, label = "Age at time\nof survey", size = 3, hjust = 0, fontface = "bold", lineheight = 0.9) +
-  annotate("text", x = 2020.8, y = 0.95, label = "Age at time\nof survey", size = 3, hjust = 1, fontface = "bold", lineheight = 0.8) +
+  guides(fill = "none", color = "none") +
+  annotate("text", x = 1974.5, y = 0.58, 
+           label = "Age at time\nof survey", size = 3, 
+           hjust = 0, fontface = "bold", lineheight = 0.9) +
+  annotate("text", x = 2020.8, y = 0.95, 
+           label = "Age at time\nof survey", size = 3, 
+           hjust = 1, fontface = "bold", lineheight = 0.8) +
   geom_label_repel(aes(label = end_label), color = "white", nudge_x = 1) +
   geom_label_repel(aes(label = start_label), color = "white", nudge_x = -1) +
   coord_cartesian(xlim = c(1976, 2019)) +

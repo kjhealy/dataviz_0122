@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization Notes"
 author: "<YOUR NAME HERE>"
-date: "6/15/2021"
+date: "January 2022"
 output: html_document
 ---
 
@@ -41,7 +41,7 @@ Regular text goes here.
 R code goes in chunks that look like this:
 
 ```{r}
-## r code
+## This is a comment inside a codechunk
 1 + 1
 ```
 

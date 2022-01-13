@@ -1,7 +1,7 @@
 ---
 title: "Work with Models"
 author: "Kieran Healy"
-date: "09-June-2021"
+date: "13-January-2022"
 output: html_document
 ---
 
@@ -332,22 +332,23 @@ p <- ggplot(data = out_tidy,
             mapping = aes(x = year, y = estimate,
                           ymin = estimate - 2*std.error,
                           ymax = estimate + 2*std.error,
-                          color = continent, group = continent,
+                          color = continent, 
+                          group = continent,
                           fill = continent))
 
 
 p + geom_pointrange(position = position_dodge(width = 1)) +
-    geom_line() + 
-    geom_ribbon(mapping = aes(x = year, 
-                          ymin = estimate - 2*std.error,
-                          ymax = estimate + 2*std.error,
-                          group = continent,
-                          fill = continent), 
-                 alpha = 0.2, 
-                inherit.aes = FALSE) + 
+    # geom_line() + 
+    # geom_ribbon(mapping = aes(x = year, 
+    #                       ymin = estimate - 2*std.error,
+    #                       ymax = estimate + 2*std.error,
+    #                       group = continent,
+    #                       fill = continent), 
+    #              alpha = 0.2, 
+    #             inherit.aes = FALSE) + 
     scale_x_continuous(breaks = unique(gapminder$year)) + 
     theme(legend.position = "top") +
-    labs(x = "Year", y = "Estimate", color = "Continent")
+    labs(x = "Year", y = "Estimate", color = "Continent", fill = "Continent")
 ```
 
 ## Grouped Analysis: PCA Example

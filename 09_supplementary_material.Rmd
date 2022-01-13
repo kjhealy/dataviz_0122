@@ -1,7 +1,7 @@
 ---
 title: "Supplementary Material"
 author: "Kieran Healy"
-date: "09-June-2021"
+date: "13-January-2022"
 output: html_document
 ---
 
@@ -452,6 +452,7 @@ il_tidy
 il_tidy %>%
   activate(nodes) %>%
   mutate(centrality = centrality_degree()) %>%
+  as_tibble() %>% 
   ggplot(mapping = aes(x = centrality)) + 
   geom_histogram() + 
   labs(x = "Count of Victories", y = "Count of Warriors ") +
@@ -467,6 +468,7 @@ il_tidy %>%
   mutate(centrality = centrality_degree()) %>%
   arrange(desc(centrality)) %>%
   top_n(10, wt = centrality) %>%
+  as_tibble() %>% 
   ggplot(mapping = aes(x = centrality, 
                        y = reorder(name, centrality), 
                        color = affil)) + 
@@ -508,7 +510,7 @@ il_tidy %>%
   geom_node_point(aes(color = affil)) +
   scale_color_manual(values = c("blue", "red"), 
                      labels = c("Athenian", "Trojan")) +
-  guides(color = FALSE, fill = FALSE) +
+  guides(color = "none", fill = "none") +
   geom_node_label(aes(filter = centrality > 3, 
                       label = name, fill = affil), 
                       size = rel(2.5)) +
@@ -526,6 +528,7 @@ il_tidy %>%
          betweenness = centrality_betweenness()) %>%
   arrange(desc(betweenness)) %>%
   top_n(10, wt = betweenness) %>%
+  as_tibble() %>% 
   ggplot(mapping = aes(x = betweenness, 
                        y = reorder(name, 
                        betweenness), color = affil)) + 
@@ -545,6 +548,7 @@ il_tidy %>%
   mutate(alpha = centrality_alpha()) %>%
   arrange(desc(alpha)) %>%
     top_n(10, wt = alpha) %>%
+  as_tibble() %>% 
   ggplot(mapping = aes(x = alpha, 
                        y = reorder(name, alpha), 
                        color = affil)) + 
