@@ -1,4 +1,4 @@
-## A 4-Day Remote Seminar via [Code Horizons](https://codehorizons.com/Seminars/data-visualization/).
+## A Three Day Remote Seminar via [Code Horizons](https://codehorizons.com/Seminars/data-visualization/).
 
 ## Information for Participants
 
