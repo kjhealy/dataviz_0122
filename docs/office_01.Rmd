@@ -1,0 +1,86 @@
+---
+title: "Office Hour 1"
+author: "Kieran Healy"
+date: "1/20/2022"
+output: html_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Setup
+
+```{r}
+library(tidyverse)
+library(socviz)
+library(gapminder)
+```
+
+
+## Day One sample exercises
+
+- The office hour is primarily for any questions you might have, but I'll also work through the following these exercises if you want to give them a try. 
+
+1. Use RStudio to create an RMarkdown file named something like `office_01.Rmd`
+2. Set up your file with a code chunk that loads the `tidyverse`, and `gapminder` packages.
+3. Then use R to draw these plots:
+
+```{r plot-samples-1, fig.cap = "GDP and Life Expecancy 1", echo = FALSE, message = FALSE}
+
+ggplot(data = gapminder,  
+     mapping = aes(x = gdpPercap, y = lifeExp)) + 
+     geom_point() + 
+     geom_smooth() + 
+     labs(x = "GDP Per Capita",
+     y = "Life Expectancy")
+
+```
+
+
+```{r plot-samples-2, fig.cap = "GDP and Life Expecancy 2", echo = FALSE, message = FALSE}
+
+ggplot(data = gapminder,  
+     mapping = aes(x = gdpPercap, y = lifeExp)) + 
+     geom_point() + 
+     geom_smooth() + 
+     scale_x_log10(labels = scales::dollar) + 
+     labs(x = "GDP Per Capita (log scale)",
+     y = "Life Expectancy")
+
+```
+
+```{r plot-samples-3, fig.cap = "GDP and Life Expecancy 3", echo = FALSE, message = FALSE}
+ggplot(data = gapminder,  
+     mapping = aes(x = gdpPercap, y = lifeExp, size = pop)) + 
+     geom_point() + 
+     geom_smooth(method = "lm") + 
+     scale_x_log10(labels = scales::dollar) + 
+     labs(x = "GDP Per Capita (log scale)",
+     y = "Life Expectancy", size = "Population")
+
+```
+
+```{r plot-samples-4, fig.cap = "GDP and Life Expectancy 4", echo = FALSE, message = FALSE}
+ggplot(data = gapminder,  
+     mapping = aes(y = gdpPercap, x = lifeExp, size = pop)) + 
+     geom_point(color = "gray20", alpha = 0.3) + 
+     geom_smooth() + 
+     scale_y_log10(labels = scales::dollar) + 
+     labs(y = "GDP Per Capita (log scale)",
+     x = "Life Expectancy", size = "Population")
+
+```
+
+- Think also about how these plots might be further improved.
+
+
+
+

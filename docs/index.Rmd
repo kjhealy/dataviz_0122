@@ -22,6 +22,12 @@ knitr::opts_chunk$set(
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Day 1 Office Hour
+
+- [Sample Exercise](office_01.html)
+
+<hr>
+
 # Information for Participants
 
 This page contains information for seminar participants. Please read it and follow the instructions below to download and install the necessary software and course materials.
