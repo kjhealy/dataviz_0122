@@ -261,7 +261,7 @@ yr_labs <- data.frame(x = 85, y = 0.8,
 p <- ggplot(data = subset(gss_lon, year %in% yrs),
             mapping = aes(x = age))
 
-p1 <- p + geom_density(fill = "gray20", color = FALSE,
+p1 <- p + geom_density(fill = "gray20", color = "none",
                        alpha = 0.9, mapping = aes(y = ..scaled..)) +
     geom_vline(data = subset(mean_age, year %in% yrs),
                aes(xintercept = xbar), color = "white", size = 0.5) +
@@ -411,7 +411,7 @@ p <- ggplot(data = studebt,
 p + geom_bar(stat = "identity") +
     scale_fill_brewer(type = "qual", palette = "Dark2") +
     scale_y_continuous(labels = scales::percent) +
-    guides(fill = FALSE) +
+    guides(fill = "none") +
     theme(strip.text.x = element_text(face = "bold")) +
     labs(y = NULL, x = p_xlab,
       caption = p_caption,
@@ -687,7 +687,7 @@ p <- ggplot(cohort_comp,
   geom_ribbon(alpha = 0.2, color = NA) +
   scale_color_manual(values = my_colors()) +
   scale_fill_manual(values = my_colors()) +
-  guides(fill = FALSE, color = FALSE) +
+  guides(fill = "none", color = "none") +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   geom_label_repel(aes(label = end_label), fill = "white",
                    size = 2.2, segment.colour = NA, nudge_x = 0.6) +

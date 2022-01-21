@@ -177,7 +177,7 @@ oecd_sum
 
 p <- ggplot(data = oecd_sum,
             mapping = aes(x = year, y = diff, fill = hi_lo))
-p + geom_col() + guides(fill = FALSE) +
+p + geom_col() + guides(fill = "none") +
   labs(x = NULL, y = "Difference in Years",
        title = "The US Life Expectancy Gap",
        subtitle = "Difference between US and OECD
@@ -206,7 +206,7 @@ p + geom_bar()
 
 p <- ggplot(data = gss_sm,
             mapping = aes(x = religion, fill = religion))
-p + geom_bar() + guides(fill = FALSE)
+p + geom_bar() + guides(fill = "none")
 
 ```
 

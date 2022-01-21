@@ -151,7 +151,7 @@ p + geom_point(data = subset(gapminder,
                alpha = 0.5,
                inherit.aes = FALSE) + 
     geom_line() +
-    geom_ribbon(alpha = 0.2, color = FALSE) +
+    geom_ribbon(alpha = 0.2, color = "none") +
     scale_x_log10(labels = scales::dollar)
 
 ```

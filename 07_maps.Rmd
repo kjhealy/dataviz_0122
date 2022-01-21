@@ -79,7 +79,7 @@ p <- ggplot(data = us_states,
             aes(x = long, y = lat,
                 group = group, fill = region))
 
-p + geom_polygon(color = "gray90", size = 0.1) + guides(fill = FALSE)
+p + geom_polygon(color = "gray90", size = 0.1) + guides(fill = "none")
 
 ```
 
@@ -91,7 +91,7 @@ p <- ggplot(data = us_states,
 
 p + geom_polygon(color = "gray90", size = 0.1) +
     coord_map(projection = "albers", lat0 = 39, lat1 = 45) +
-    guides(fill = FALSE)
+    guides(fill = "none")
 
 ```
 

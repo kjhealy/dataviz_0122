@@ -74,7 +74,7 @@ p + geom_col(position = "dodge") +
 p <- ggplot(rel_by_region, aes(x = religion, y = pct, fill = religion))
 p + geom_col(position = "dodge") +
     labs(x = NULL, y = "Percent", fill = "Religion") +
-    guides(fill = FALSE) + 
+    guides(fill = "none") + 
     coord_flip() + 
     facet_wrap(~ bigregion, nrow = 1)      
 ```
@@ -309,7 +309,7 @@ p <- ggplot(data = organdata,
 p + geom_point() +
     geom_text_repel(data = subset(organdata, ind),
                     mapping = aes(label = ccode)) +
-    guides(label = FALSE, color = FALSE)      
+    guides(label = "none", color = "none")      
 ```
 
 
@@ -384,7 +384,7 @@ p <- ggplot(data = organdata,
 p + geom_point() +
     labs(x = "Road Deaths",
          y = "Donor Procurement") +
-    guides(color = FALSE)
+    guides(color = "none")
 
 ```
 
