@@ -71,6 +71,20 @@ p + geom_col(position = "dodge") +
 ```
 
 ```{r facet_dodge}
+rel_by_region %>% 
+  drop_na() %>% 
+  mutate(rel_ord = factor(religion, 
+                          levels = rev(c("Catholic", "Protestant",
+                                     "Jewish", "Other", "None")),
+                          ordered = TRUE)) %>% 
+  ggplot(aes(x = pct, y = rel_ord, fill = religion)) +
+  geom_col(position = "dodge") +
+    labs(x = NULL, y = "Percent", fill = "Religion") +
+    guides(fill = "none") + 
+    facet_wrap(~ bigregion, nrow = 1)
+
+
+
 p <- ggplot(rel_by_region, aes(x = religion, y = pct, fill = religion))
 p + geom_col(position = "dodge") +
     labs(x = NULL, y = "Percent", fill = "Religion") +

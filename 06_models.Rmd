@@ -164,6 +164,11 @@ library(broom)
 ```
 
 ```{r 06-models-9}
+out <- lm(formula = lifeExp ~ gdpPercap + pop + continent,
+          data = gapminder)
+
+summary(out)
+
 out_comp <- tidy(out)
 out_comp %>% round_df()
 
@@ -171,10 +176,10 @@ out_comp %>% round_df()
 
 
 ```{r 06-models-10}
-p <- ggplot(out_comp, mapping = aes(x = term,
-                                    y = estimate))
+p <- ggplot(out_comp, mapping = aes(x = estimate,
+                                    y = term))
 
-p + geom_point() + coord_flip() 
+p + geom_point()
 ```
 
 
@@ -198,9 +203,12 @@ out_conf <- out_conf %>%
 
 ```{r 06-models-13}
 
-p <- ggplot(out_conf, mapping = aes(x = reorder(nicelabs, estimate),
-                                    y = estimate, ymin = conf.low, ymax = conf.high))
-p + geom_pointrange() + coord_flip() + labs(x="", y="OLS Estimate")
+p <- ggplot(out_conf, mapping = aes(x = estimate, 
+                                    xmin = conf.low, 
+                                    xmax = conf.high,
+                                    y = reorder(nicelabs, estimate)))
+p + geom_pointrange() + 
+  labs(x="", y="OLS Estimate")
 
 ```
 
@@ -426,7 +434,7 @@ mw_pca
 ```{r pca-6}
 
 state_pca <- mw_pca %>% 
-    mutate(pca = map(data, do_pca))
+    mutate(pca = purrr::map(data, do_pca))
 
 state_pca
 
@@ -438,8 +446,8 @@ do_tidy <- function(pr){
     broom::tidy(pr, matrix = "pcs")
 }
 state_pca  <- mw_pca %>%
-    mutate(pca = map(data, do_pca),
-           pcs = map(pca, do_tidy)) 
+    mutate(pca = purrr::map(data, do_pca),
+           pcs = purrr::map(pca, do_tidy)) 
 
 state_pca
 
@@ -495,9 +503,9 @@ midwest %>%
     select_if(is.numeric) %>%
     select(-PID) %>%
     nest() %>%
-    mutate(pca = map(data, do_pca),
-           pcs = map(pca, do_tidy),
-           fitted = map(pca, do_aug)) %>%
+    mutate(pca = purrr::map(data, do_pca),
+           pcs = purrr::map(pca, do_tidy),
+           fitted = purrr::map(pca, do_aug)) %>%
     unnest(cols = c(fitted)) %>%
     add_column(county = midwest$county) %>%
     ggplot(mapping = aes(x = .fittedPC2,
@@ -546,12 +554,15 @@ bo_gg %>% select(factor, AME, lower, upper)
 
 
 ```{r 06-models-33}
-p <- ggplot(data = bo_gg, aes(x = reorder(factor, AME),
-                              y = AME, ymin = lower, ymax = upper))
+p <- ggplot(data = bo_gg, aes(x = AME, 
+                              xmin = lower, 
+                              xmax = upper, 
+                              y = reorder(factor, AME)))
 
-p + geom_hline(yintercept = 0, color = "gray80") +
-    geom_pointrange() + coord_flip() +
-    labs(x = NULL, y = "Average Marginal Effect") 
+p + geom_vline(xintercept = 0, color = "gray80") +
+    geom_pointrange() +
+    labs(x = "Average Marginal Effect",
+         y = NULL) 
 
 ```
 
@@ -559,11 +570,13 @@ p + geom_hline(yintercept = 0, color = "gray80") +
 ```{r 06-models-34}
 pv_cp <- cplot(out_bo, x = "sex", draw = FALSE)
 
-p <- ggplot(data = pv_cp, aes(x = reorder(xvals, yvals),
-                              y = yvals, ymin = lower, ymax = upper))
+p <- ggplot(data = pv_cp, aes(x = yvals, 
+                              xmin = lower, 
+                              xmax = upper, 
+                              y = reorder(xvals, yvals)))
 
-p + geom_hline(yintercept = 0, color = "gray80") +
-    geom_pointrange() + coord_flip() +
+p + geom_vline(xintercept = 0, color = "gray80") +
+    geom_pointrange() +
     labs(x = NULL, y = "Conditional Effect") 
 
 ```
